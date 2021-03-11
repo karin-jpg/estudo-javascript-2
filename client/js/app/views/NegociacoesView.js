@@ -4,7 +4,7 @@ class NegociacoesView {
         this._elemento = elemento;
     }
 
-    _template(modelo) {
+    _template(model) {
 
         return `
             <table class="table table-hover table-bordered" id="tabela">
@@ -18,7 +18,7 @@ class NegociacoesView {
              </thead>
         
                 <tbody>
-                    ${modelo.negociacoes.map(n => 
+                    ${model.negociacoes.map(n => 
                          `
                             <tr>
                                 <td>${DateHelper.dataParaTexto(n.data)}</td>
@@ -32,14 +32,14 @@ class NegociacoesView {
         
                 <tfoot>
                 <td colspan = "3"></td>
-                <td>${modelo.negociacoes.reduce((total, n) => total + n.volume, 0.0)}</td> 
+                <td>${model.negociacoes.reduce((total, n) => total + n.volume, 0.0)}</td> 
                 </tfoot>
             </table>
             `;
     }
 
-    update(modelo) {
-        this._elemento.innerHTML = this._template(modelo);
+    update(model) {
+        this._elemento.innerHTML = this._template(model);
     }
 
 }
