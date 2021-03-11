@@ -14,8 +14,8 @@ class NegociacaoController {
             this._inputQuantidade.value,
             this._inputValor.value
         );
-            console.log(negociacao);
-            console.log(DateHelper.dataParaTexto(negociacao.data));
+            
+        
 
         
     }
